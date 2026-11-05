@@ -1,7 +1,7 @@
-FROM quay.io/centos/centos:stream10-minimal
+FROM quay.io/centos/centos:stream10
 
-WORKDIR /home/jq
+WORKDIR /app/py
 
-RUN microdnf install -y python3 && microdnf clean all
+RUN dnf install -y python3 && dnf clean all && rm -rf /var/cache/dnf
 
 ENTRYPOINT ["/usr/bin/bash"]

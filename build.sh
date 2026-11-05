@@ -1,3 +1,6 @@
 #!/bin/env bash
 
-buildah build --tag quay.io/plebs_inc/python:latest -f Containerfile
+. .env
+TAG_NAME="centos-10"
+
+buildah build --tag ${REPO_NAME}:${TAG_NAME} -f Containerfile
